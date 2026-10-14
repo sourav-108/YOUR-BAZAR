@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="bn">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>YOUR BAZAR – 3D Online Store</title>
+    <meta name="description" content="YOUR BAZAR: gadget, fashion o home product. bKash, Nagad ba Cash on Delivery.">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&display=swap">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <div class="wrap bar">
+            <a class="logo" href="#top">YOUR BAZAR</a>
+            <nav><a href="#shop">Shop</a><a href="#deal">Offer</a><a href="#help">Help</a></nav>
+            <span class="sp"></span>
+            <input class="search" id="q" type="search" placeholder="Product khujun…" aria-label="Search">
+            <button class="ic" id="theme" aria-label="Dark/Light mode">◐</button>
+            <button class="ic" id="userBtn">Login</button>
+            <button class="ic" id="cartBtn">Cart <span id="cc">0</span></button>
+        </div>
+    </header>
+    <main id="top" class="wrap">
+        <section class="hero">
+            <div>
+                <h1>Premium products, delivered across Bangladesh.</h1>
+                <p>Shop curated gadgets, fashion and home essentials with secure payments, Cash on Delivery and 7-day
+                    easy returns.</p>
+                <div class="cta"><a class="btn" href="#shop">Shop now</a><a class="btn alt" href="#deal">View today's
+                        offers</a></div>
+            </div>
+            <div id="stage" aria-label="3D gift box, drag korun"><span class="hint">Drag kore ghuran</span></div>
+        </section>
+        <section class="trust">
+            <div class="glass"><b>Free delivery</b>৳3,000-er upore</div>
+            <div class="glass"><b>Cash on Delivery</b>Sara Bangladesh-e</div>
+            <div class="glass"><b>7 diner return</b>Jhamela chhara</div>
+            <div class="glass"><b>Secure payment</b>bKash · Nagad · Card</div>
+        </section>
+        <section id="shop">
+            <h2>Shob product</h2>
+            <div class="tools"><span id="chips"></span><span class="sp"></span>
+                <select id="sort" aria-label="Sort">
+                    <option value="">Sort: Featured</option>
+                    <option value="lo">Dam: kom theke beshi</option>
+                    <option value="hi">Dam: beshi theke kom</option>
+                    <option value="off">Boro discount</option>
+                    <option value="rt">Best rating</option>
+                </select>
+            </div>
+            <div class="grid" id="grid"></div>
+        </section>
+        <section class="deal" id="deal">
+            <div>
+                <h2>Flash Sale: 30% porjonto chhar</h2>
+                <p>Offer shesh hobar ager shomoy:</p>
+            </div>
+            <div class="count">
+                <div id="h">00<small>ghonta</small></div>
+                <div id="m">00<small>minit</small></div>
+                <div id="s">00<small>second</small></div>
+            </div>
+            <button class="btn sun" id="copy">Coupon: SAVE10</button>
+        </section>
+    </main>
+    <footer id="help">
+        <div class="wrap cols">
+            <div><b>YOUR BAZAR</b>
+                <p>Dhaka, Bangladesh<br>WhatsApp: 01XXX-XXXXXX</p>
+            </div>
+            <div><a href="#">About Us</a><a href="#">Contact Us</a><a href="#">FAQ</a></div>
+            <div><a href="#">Return &amp; Refund Policy</a><a href="#">Shipping Policy</a><a href="#">Privacy
+                    Policy</a><a href="#">Terms &amp; Conditions</a></div>
+        </div>
+    </footer>
+
+    <div class="shade" id="shade"></div>
+    <aside class="drawer" id="drawer" aria-label="Cart">
+        <div class="hd">
+            <h2>Apnar cart</h2><button class="ic" data-x>Bondho</button>
+        </div>
+        <div class="items" id="items"></div>
+        <div class="coupon"><input id="cp" placeholder="Coupon code"><button class="btn alt" id="apply">Apply</button>
+        </div>
+        <div class="sum" id="sum"></div>
+        <button class="btn" id="go">Checkout</button>
+    </aside>
+
+    <div class="modal" id="auth" role="dialog" aria-label="Login">
+        <div class="hd">
+            <h2 id="at">Login</h2><button class="ic" data-x>✕</button>
+        </div>
+        <div class="f"><input id="an" placeholder="Apnar naam" autocomplete="name"><input id="ae" type="email"
+                placeholder="Email" autocomplete="email"><input id="ap" type="password"
+                placeholder="Password (kom pokkhe 6 okkhor)" autocomplete="current-password"></div>
+        <p class="err" id="aerr"></p>
+        <button class="btn" id="asub" style="width:100%">Login</button>
+        <p class="meta" style="margin-top:12px;text-align:center"><span id="aq">Notun user?</span> <button class="link"
+                id="asw">Sign up korun</button></p>
+    </div>
+
+    <div class="modal wide" id="prof" role="dialog" aria-label="Profile">
+        <div class="hd">
+            <h2>Amar profile</h2><button class="ic" data-x>✕</button>
+        </div>
+        <div id="pbody"></div>
+    </div>
+
+    <div class="modal wide" id="pd" role="dialog" aria-label="Product">
+        <div id="pdb"></div>
+    </div>
+
+    <div class="modal" id="co" role="dialog" aria-label="Checkout">
+        <div class="hd">
+            <h2>Checkout</h2><button class="ic" data-x>✕</button>
+        </div>
+        <div class="f"><input id="nm" placeholder="Apnar naam"><input id="ph" placeholder="Mobile number (01XXXXXXXXX)"
+                inputmode="numeric"><input id="ad" placeholder="Puro thikana"></div>
+        <div class="pay"><label><input type="radio" name="p" value="bKash" checked>bKash</label><label><input
+                    type="radio" name="p" value="Nagad">Nagad</label><label><input type="radio" name="p"
+                    value="Card">Card</label><label><input type="radio" name="p" value="Cash on Delivery">Cash on
+                Delivery</label></div>
+        <p class="err" id="err"></p>
+        <button class="btn" id="place" style="width:100%">Order confirm korun</button>
+    </div>
+    <div class="modal" id="ok">
+        <h2>Order hoye geche!</h2>
+        <p id="okt"></p>
+        <div class="cta" style="margin-top:16px"><button class="btn" id="seeP">Profile-e dekhun</button><button
+                class="btn alt" data-x>Shopping cholte thakun</button></div>
+    </div>
+    <div class="toast" id="toast"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>
